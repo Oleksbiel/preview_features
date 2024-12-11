@@ -5,36 +5,30 @@ import { CoreModule } from '@web/core';
   standalone: true,
   imports: [CoreModule],
   selector: 'signal-preview',
-  templateUrl: './signal.component.html'
+  templateUrl: './signal.component.html',
 })
-
 export class SignalPreviewComponent implements OnInit {
-
-
   counter = signal<number>(0);
-  doubleCounter = computed(() => this.counter() + 2);
+  doubleCounter = computed(() => this.counter() * 2);
 
   someMessage: string;
 
-  constructor() { 
-
+  constructor() {
     effect(() => {
-        this.someMessage = `Counter is ${this.counter()}`;
+      this.someMessage = `Counter is ${this.counter()}`;
     });
   }
 
-  ngOnInit() { 
-
+  ngOnInit() {
     setTimeout(() => {
       this.counter.set(10);
     }, 3000);
   }
 
-
-  onIncrement(){
+  onIncrement() {
     this.counter.update((value) => value + 1);
   }
-  onDecrement(){
+  onDecrement() {
     this.counter.update((value) => value - 1);
   }
 }
