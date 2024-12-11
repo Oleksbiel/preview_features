@@ -1,0 +1,17 @@
+<h2 class="text-xl font-bold">Standalone Preview</h2>
+<div>
+  Counter -- {{counter()}}
+</div>
+<div>
+  DoubleCounter -- {{doubleCounter()}}
+</div>
+<div>
+  Some message -- {{someMessage}}
+</div>
+
+<div class="flex space-x-4 mt-4">
+  <button (click)="onIncrement()" class="bg-green-500 p-3 text-black">Incremet</button>
+  <button (click)="onDecrement()" class="bg-red-500 p-3 text-black">Decrement</button>
+</div>
+
+<div class="border mb-5"></div>

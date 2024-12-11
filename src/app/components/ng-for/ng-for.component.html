@@ -1,0 +1,8 @@
+<h2 class="text-xl font-bold">Ng for preview</h2>
+<app-header />
+
+<div *ngFor="let item of listOfItems; trackBy: trackByFunc">
+  {{item.name}}
+</div>
+
+<div class="border mb-5"></div>
